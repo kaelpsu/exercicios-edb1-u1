@@ -5,7 +5,6 @@ bool containsDuplicate(int *first, int *last) {
     int *start = first;
     int *end = last;
 
-    // Use an extra array to mark visited elements
     std::array<bool, 5> visited;
     visited.fill(false);
 

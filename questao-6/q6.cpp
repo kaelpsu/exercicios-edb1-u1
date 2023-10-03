@@ -5,7 +5,7 @@ void find_floor_ceiling(int *first, int *last, int x, int& floor, int& ceiling) 
     int *left = first;
     int *right = std::prev(last);
 
-    // Initialize floor and ceiling to default values
+    // default values
     floor = -1;
     ceiling = -1;
 

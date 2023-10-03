@@ -1,7 +1,7 @@
 #include <iostream>
 #include <array>
 
-int find_jump_point(int *first, int *last) {
+int findJump(int *first, int *last) {
     int *left = first;
     int *right = std::prev(last);
 
@@ -19,14 +19,13 @@ int find_jump_point(int *first, int *last) {
         }
     }
 
-    // At this point, left and right point to the same index where the jump occurs
-    return *std::prev(left) + 1;  // Subtract 1 to get the value of k
+    return *std::prev(left) + 1;  // Add 1 to get the value of k
 }
 
 int main() {
     std::array<int, 9> arr = {1, 2, 3, 4, 5, 6, 9, 11, 13};
     
-    int k = find_jump_point(arr.begin(), arr.end());
+    int k = findJump(arr.begin(), arr.end());
 
     std::cout << "The value of k is: " << k << std::endl;
 

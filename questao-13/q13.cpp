@@ -3,7 +3,6 @@
 #include <algorithm>
 
 bool findTripleSumZero(const std::array<int, 4>& A, const std::array<int, 4>& B, const std::array<int, 4>& C) {
-    // Sort arrays B in increasing order and C in decreasing order
     std::array<int, 4> sortedB = B;
     std::array<int, 4> sortedC = C;
     std::sort(sortedB.begin(), sortedB.end());
@@ -18,7 +17,7 @@ bool findTripleSumZero(const std::array<int, 4>& A, const std::array<int, 4>& B,
             int sum = a + sortedB[runnerB] + sortedC[runnerC];
 
             if (sum == 0) {
-                std::cout << a << " " << sortedB[runnerB] << " " << sortedC[runnerC] << "\n";
+                std::cout << "index: "<< a << " " << sortedB[runnerB] << " " << sortedC[runnerC] << "\n";
                 return true; // Found a triple (a, b, c) with a + b + c = 0
             } else if (sum < 0) {
                 runnerB++; // Sum is too small, advance in B
@@ -28,7 +27,7 @@ bool findTripleSumZero(const std::array<int, 4>& A, const std::array<int, 4>& B,
         }
     }
 
-    return false; // No such triple found
+    return false; // No triple found
 }
 
 int main() {

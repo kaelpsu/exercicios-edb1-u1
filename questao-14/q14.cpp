@@ -1,13 +1,8 @@
-// C++ program to find the only repeating element in an 
-// array of size n and elements from range 1 to n-1. 
 #include <bits/stdc++.h> 
 #include <array>
-  
-  
-// Returns index of second appearance of a repeating element 
-// The function assumes that array elements are in range from 
-// 1 to n-1. 
-int *FindRepeatingElement(int *first, int *last){
+
+// Returns index of the duplicate
+int *findDuplicate(int *first, int *last){
     int *left = first;
     int *right = std::prev(last);
     int *mid;
@@ -30,7 +25,7 @@ int *FindRepeatingElement(int *first, int *last){
 int main() 
 { 
     std::array<int, 6> arr {0, 0, 1, 2, 3, 4}; 
-    int *index = FindRepeatingElement(arr.begin(), arr.end()); 
+    int *index = findDuplicate(arr.begin(), arr.end()); 
     std::cout << *index; 
     return 0; 
 } 
